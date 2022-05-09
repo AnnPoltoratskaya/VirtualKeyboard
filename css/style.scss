@@ -1,0 +1,97 @@
+@import "style_zero";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+[class*="__container"] {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 15px;
+}
+
+
+.keyboard__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard__name {
+  font-size: 3rem;
+  padding: 20px;
+}
+
+.keyboard__text {
+  width: 70%;
+  height: 200px;
+  //min-height: 30%;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  border-radius: 7px;
+
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.keyboard__keys {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+}
+
+.keyboard__row {
+  display: flex;
+}
+
+.key {
+  height: 45px;
+  width: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(49, 49, 49, 0.9);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.5s ease-out;
+  }
+
+  &.active {
+    background: rgba(0, 255, 0, 1);
+    transition: all 0.3s ease-out;
+  }
+
+
+}
+
+.key_wide {
+  width: 100px;
+}
+
+.key_extra-wide {
+  width: 375px;
+}
+
+.keyboard__note {
+  margin-top: 20px;
+
+  & p {
+    padding: 10px 0;
+  }
+}
