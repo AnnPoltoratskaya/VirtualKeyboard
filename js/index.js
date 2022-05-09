@@ -1,45 +1,3 @@
-// let keyboardCharCodes =
-// [113, 119, 101, 114, 116, 121, 117, 105, 111, 112, 91, 93,
-// 97, 115, 100, 102, 103, 104, 106, 107, 108, 59, 39,
-// 122, 120, 99, 118, 98, 110, 109, 44, 46, 47];
-// document.onkeypress = function (event) {
-//     keyboardCharCodes.push(event.charCode)
-//     console.log(keyboardCharCodes);
-//
-// }
-//
-// const showKeyboard = (keyboardCharCodes) => {
-//     let out = '';
-//     for (let i = 0; i < keyboardCharCodes.length; i++) {
-//         // if (i===12) out+=`<br>`
-//         out += `<div class="keyboard__keys_key key" data="${keyboardCharCodes[i]}">${String.fromCharCode(keyboardCharCodes[i])}</div>`
-//     }
-//     document.querySelector('.keyboard__keys').innerHTML = out;
-// }
-//
-// showKeyboard(keyboardCharCodes);
-//
-// const keyLayout = [
-//     "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace",
-//     "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
-//     "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-//     "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
-//     "space"
-// ];
-//event.key
-
-// const keysLayout = [
-//     {
-//         code: 'KeyA',
-//         eng: 'a',
-//         rus: 'ф'
-//     },
-//     {
-//         code: 'KeyS',
-//         eng: 's',
-//         rus: 'ы'
-//     }
-// ];
 const keysLayout = [
     {code: 'Backquote', eng: '`', rus: 'ё', newRow: true},
     {code: 'Digit1', eng: '1'},
@@ -107,7 +65,6 @@ const keysLayout = [
     {code: 'ControlRight', eng: 'ctrl', spec: true}
 ];
 
-// let capsLock = false;
 let langEng = true;
 
 const renderKeyboard = () => {
@@ -135,13 +92,10 @@ const renderKeyboard = () => {
         keyElement.innerHTML = key.eng;
         keyboardRow.append(keyElement);
 
-        // switch (key) {
-        //     case "backspace":
     })
 };
 
 const changeCapsLock = (capsLock = false) => {
-    // const keysABC = document.querySelectorAll('.key-abc');
     const keysABC = document.querySelectorAll('.key');
     keysABC.forEach(elem => {
         capsLock ? elem.innerHTML = elem.innerHTML.toUpperCase() : elem.innerHTML = elem.innerHTML.toLowerCase()
@@ -173,11 +127,8 @@ const renderPage = () => {
             </div>
         </div>
     </div>`;
-    //-----------------------------------------------------------
     renderKeyboard();
 };
-//==============================================================================================================
-// window.addEventListener("DOMContentLoaded", renderPage());
 
 renderPage();
 
@@ -207,10 +158,6 @@ document.addEventListener('keydown', (event) => {
     keyActiveAdd(key);
 
     if (key.id === 'Tab') event.preventDefault();
-
-    // if (key.id == 'MetaLeft') key.classList.remove('active');
-
-//    смена языка
     if (((event.code === 'ShiftLeft' || event.code === 'ShiftRight') && event.ctrlKey) || ((event.code === 'ControlLeft' || event.code === 'ControlRight') && event.shiftKey)) {
         langEng = !langEng;
         langEng ? localStorage.setItem('lang', 'en') : localStorage.setItem('lang', 'ru');
@@ -221,7 +168,6 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
     const key = document.querySelector(`#${event.code}`);
     keyActiveRem(key);
-    // if (key && key.id !== 'CapsLock') key.classList.remove('active');
 });
 
 document.querySelector('.keyboard__keys').addEventListener('mousedown', (event) => {
@@ -230,8 +176,6 @@ document.querySelector('.keyboard__keys').addEventListener('mousedown', (event) 
         keyActiveAdd(key);
         if (!key.classList.contains('key_spec')) keyboardText.value += key.innerHTML;
         else {
-            // console.log(key.id)
-            // let str = keyboardText.value;
             switch (key.id) {
                 case 'Enter':
                     keyboardText.value += `\n`;
@@ -241,7 +185,6 @@ document.querySelector('.keyboard__keys').addEventListener('mousedown', (event) 
                     break;
                 case 'Delete':
                     if (keyboardText.value.length > keyboardText.selectionStart) {
-                        // console.log(keyboardText.selectionStart)
                         keyboardText.value = keyboardText.value.slice(0, keyboardText.selectionStart - 1) + keyboardText.value.slice(keyboardText.selectionStart, keyboardText.length)
                     }
                     keyboardText.focus();
