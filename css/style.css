@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+[class*=__container] {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 15px;
+}
+
+.keyboard__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard__name {
+  font-size: 3rem;
+  padding: 20px;
+}
+
+.keyboard__text {
+  width: 70%;
+  height: 200px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  border-radius: 7px;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.keyboard__keys {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.keyboard__row {
+  display: flex;
+}
+
+.key {
+  height: 45px;
+  width: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(49, 49, 49, 0.9);
+  transition: all 0.3s ease-out;
+}
+.key:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+}
+.key.active {
+  background: rgb(0, 255, 0);
+}
+
+.key_wide {
+  width: 100px;
+}
+
+.key_extra-wide {
+  width: 375px;
+}
+
+.keyboard__note {
+  margin-top: 20px;
+}
+.keyboard__note p {
+  padding: 10px 0;
+}
+
+/*# sourceMappingURL=style.css.map */
